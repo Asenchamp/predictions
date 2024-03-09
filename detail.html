@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% block content %}
+	{% include 'navbar.html'%}
+	<div class="container">
+		{% if error_message %}
+		<p class ="messages">
+			<strong>{{ error_message }}</strong>
+		</p>
+		{% endif %}
+
+		<div class="px-3">
+			<h1 class="lead">{{ match.match_text }}</h1>
+		</div>
+		<form action ="{% url 'betpolls:vote' match.id %}" method ="post">
+			{% csrf_token %}
+			{% for choice in match.choice_set.all %}	
+				<div class="option">
+					<input type="radio" name="card" id="silver choice{{ forloop.counter }}"
+					value ="{{ choice.id }} ">
+					<label for="silver choice{{ forloop.counter }}" aria-label="Silver">
+						<span></span>
+
+						{{ choice.choice }}
+						
+					</label>
+				</div>
+			{% endfor %}
+			<input type ="submit" value ="Vote" class="btn btn-outline-primary me-2" />
+		</form>
+  </div>
+
+{% endblock %}
+
+

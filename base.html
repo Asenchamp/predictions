@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang ="en">
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>THE ARSENE</title>
+	<link rel="stylesheet" href="{% static 'styles/boostrap.css' %}" />
+	<link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'styles/dashboard.css' %}" />
+	<link rel="stylesheet" href="{% static 'styles/resvote.css' %}" />
+	<link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+	
+</head>
+ 
+<body class=" text-white bg-dark">
+	
+	{% block content %}{% endblock %}
+	
+</body>
+</html>

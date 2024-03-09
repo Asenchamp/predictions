@@ -1,0 +1,19 @@
+
+
+<nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      HOME
+    </a>
+    {% if request.user.is_authenticated %}
+      <div class="navbar-brand" >  
+        Hello {{request.user}}
+      </div>
+    {% endif %}  
+  </div>
+</nav>
+
+
+
+
+
